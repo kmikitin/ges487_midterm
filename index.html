@@ -23,7 +23,7 @@
         <div id="map"></div>
         <script type="text/javascript">
             let map = L.map('map', {
-                center: [41.9794,-87.718],
+                center: [41.9801,-87.7184],
                 zoom: 17
             });
             let canvas = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}?api_key=b7458727-6c5e-4fef-bdbb-b54d1e5635be', {
@@ -41,6 +41,7 @@
             }
             let iconConfigs = {
                 bbh: {
+                    name: "Bernard J Brommel Hall",
                     latLong: [41.98041104340046, -87.71700690887702],
                     icon: L.icon({
                         iconUrl: './map.png',
@@ -53,6 +54,7 @@
                     description: 'Bernard J Brommel Hall, or BBH, is where the majority of STEM courses, including Geography courses, take place.'
                 },
                 library: {
+                    name: "Ronald Williams Library",
                     latLong: [41.98034343650484, -87.71919813944515],
                     icon: L.icon({
                         iconUrl: './library.png',
@@ -65,6 +67,7 @@
                     description: 'The Ronald Williams library on main campus is an important resource for NEIU students. The library provides access to 1.2 million items, rooms and spaces for study and work, and computer rentals.'
                 },
                 parking: {
+                    name: "Parking Lot F",
                     latLong: [41.981114450211855, -87.72022291547162],
                     icon: L.icon({
                         iconUrl: './parking-area.png',
@@ -77,6 +80,7 @@
                     description: 'Parking Lot F has lots of parking available for students and it is convenient to access most buildings on campus.'
                 },
                 studentUnion: {
+                    name: "Student Union",
                     latLong: [41.98131295267847, -87.71877667163135],
                     icon: L.icon({
                         iconUrl: './canteen.png',
@@ -89,6 +93,7 @@
                     description: 'The Student Union is the hub of student life at NEIU. It contains the Welcome Desk, cafeteria, Alumni Hall, Golden Eagles room, and relaxation room.'
                 },
                 athleticsCenter: {
+                    name: "Physical Education Complex",
                     latLong: [41.977929675746566, -87.71727812312841],
                     icon: L.icon({
                         iconUrl: './athlete.png',
@@ -101,6 +106,7 @@
                     description: 'The NEIU Physical Education Complex has a fitness center with a weight room, multiple gymnasiums, a pool, a track, and other spaces for physical activity.'
                 },
                 theNest: {
+                    name: "The Nest",
                     latLong: [41.97971438674563, -87.71984740007112],
                     icon: L.icon({
                         iconUrl: './hotel.png',
@@ -122,7 +128,7 @@
                         alt: iconConfig.altText
                     }
                 ).addTo(map).bindPopup(
-                    '<p>' + iconConfig.description + '</p>' + iconConfig.buildingImage
+                    '<h4>' + iconConfig.name + '</h4> <p>' + iconConfig.description + '</p>' + iconConfig.buildingImage
                 )
             }
 
